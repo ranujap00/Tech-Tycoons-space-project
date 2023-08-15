@@ -19,6 +19,22 @@ mongoose.connect(URL, {
     useUnifiedTopology: true
 });
 
+// --------- Routes ------------------
+
+const userRouter = require("./routes/users.js");
+app.use("/user", userRouter);
+
+const bookingRouter = require("./routes/bookings.js");
+app.use("/booking", bookingRouter);
+
+const destinationRouter = require("./routes/destinations.js");
+app.use("/destination", destinationRouter);
+
+const travelmodeRouter = require("./routes/travelmodes.js");
+app.use("/travelmode", travelmodeRouter);
+
+// --------- Routes ------------------
+
 const connection = mongoose.connection;
 connection.once("open", ()=>{
     console.log("MongoDB Connection Success!");
