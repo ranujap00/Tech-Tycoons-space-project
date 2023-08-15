@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
 
-    userId:{
+    userId: {
         type: String,
         required: true
     },
@@ -16,12 +16,8 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    email: {
-        type: String,
-        required: true
-    },
 });
 
-const User = mongoose.model("User", userSchema);//table name(employee), schemea name
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
