@@ -6,7 +6,7 @@ const bookingSchema = new Schema({
 
     bookingId: {
         type: String,
-        required: true
+        required: false
     },
     userId: {
         type: String,
