@@ -1,8 +1,14 @@
 function Welcome() {
 
-    return (
-      <></>
-    )
-  }
-  
-  export default Welcome;
+
+
+  return (
+    <>
+      <div className="welcomeContainer">
+
+      </div>
+    </>
+  )
+}
+
+export default Welcome;
