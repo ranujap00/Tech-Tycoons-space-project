@@ -1,0 +1,10 @@
+.welcomeContainer {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/space-tycoon-a24a4.appspot.com/o/earth-at-night-180.jpg?alt=media&token=2845eb4b-ae99-4ef7-8070-116da08f7547");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+}
