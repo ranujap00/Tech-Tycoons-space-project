@@ -12,7 +12,6 @@
 .welcomeText {
     font-size: 24px;
     color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     margin-top: 300px;
     font-family: var(--font-zen);
@@ -22,19 +21,16 @@
 .gemenideText {
     font-size: 48px;
     color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     font-family: var(--font-zen);
     font-weight: 100;
     color: var(--purple);
     text-shadow: 0 0 15px rgba(255, 255, 255, 1);
-
 }
 
 .discoverText {
     font-size: 20px;
     color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     margin-top: 50px;
     font-family: var(--font-zen);
@@ -77,7 +73,7 @@
 .welcomeButton:hover {
     background-color: var(--lightBlue);
     color: var(--darkBlue);
-    box-shadow: 0 0 5px var(--lightBlue), 0 0 25px var(--lightBlue), 0 0 50px var(--lightBlue), 0 0 200px var(--lightBlue);
+    box-shadow: 0 0 5px var(--lightBlue), 0 0 25px var(--lightBlue);
 }
 
 .welcomeButton:hover a {
