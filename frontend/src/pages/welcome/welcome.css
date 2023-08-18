@@ -12,7 +12,6 @@
 .welcomeText {
     font-size: 24px;
     color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     margin-top: 300px;
     font-family: var(--font-zen);
@@ -22,7 +21,6 @@
 .gemenideText {
     font-size: 48px;
     color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     font-family: var(--font-zen);
     font-weight: 100;
@@ -34,7 +32,6 @@
 .discoverText {
     font-size: 20px;
     color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     margin-top: 50px;
     font-family: var(--font-zen);
