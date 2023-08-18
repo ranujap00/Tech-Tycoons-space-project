@@ -19,9 +19,10 @@ function Login() {
     axios
       .post(`http://localhost:8070/user/authenticateUser`, userCredentials)
       .then((res) => {
-        if (res.data) {
+        if (res.data != "") {
           console.log("Login successfull");
-          alert("Login successfull");
+          alert(`Login successfull`);
+          sessionStorage.setItem("userId", res.data);
 
           // Move to next page
         } else {

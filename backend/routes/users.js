@@ -58,10 +58,10 @@ router.route("/authenticateUser").post((req, res) => {
     .then((user) => {
       if (user && user.password === password) {
         console.log("Authentication successfull");
-        res.send(true);
+        res.send(user._id);
       } else {
         console.log("authentication failed");
-        res.send(false);
+        res.send("");
       }
     })
     .catch((err) => {
