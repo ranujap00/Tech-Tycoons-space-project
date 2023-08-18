@@ -32,6 +32,23 @@ const bookingSchema = new Schema({
         type: Number,
         required: false
     },
+    payMode: {
+        type: String,
+        required: false
+    },
+    amount: {
+        type: Number,
+        required: false
+    },
+    uNetNumber: {
+        type: Number,
+        required: false
+    },
+    securityCode: {
+        type: Number,
+        required: false
+    },
+    
 });
 
 const Booking = mongoose.model("Booking", bookingSchema);
