@@ -8,7 +8,11 @@ router.route("/addBooking").post((req, res) => {
     const email = req.body.email;
     const country = req.body.country;
     const DOB = req.body.DOB;
+    const payMode = req.body.payMode;
     const noOfSeats = Number(req.body.noOfSeats);
+    const amount = Number(req.body.amount);
+    const uNetNumber = Number(req.body.uNetNumber);
+    const securityCode = Number(req.body.securityCode);
     
     //Transfer data using POST method
     const newBooking = new booking({
@@ -17,7 +21,11 @@ router.route("/addBooking").post((req, res) => {
         email,
         country,
         DOB,
-        noOfSeats
+        noOfSeats,
+        payMode,
+        amount,
+        uNetNumber,
+        securityCode
     })
     
     //condition - if successfully saved
