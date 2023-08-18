@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
+
+import "./Login.css";
 
 function Login() {
   // const baseUrl = process.env.BACKEND_URL;
-  let id = "64de63473aaa6865292d227d"; //get from session
+  const id = "64de63473aaa6865292d227d"; //get from session
 
   // form input
-  let [username, setUsername] = useState("");
-  let [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const userCredentials = {
     username,
@@ -41,11 +43,10 @@ function Login() {
 
   return (
     <>
-      <div>
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
+      <div className="loginContainer">
+        <h2 className="loginTopic">Gemenide Login</h2>
+        <form onSubmit={handleSubmit} className="loginForm">
           <div>
-            <label htmlFor="username">Username</label>
             <input
               type="text"
               id="username"
@@ -53,11 +54,12 @@ function Login() {
               onChange={(e) => {
                 setUsername(e.target.value);
               }}
+              placeholder="Gemenide ID"
+              className="loginInput"
               required
             />
           </div>
           <div>
-            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
@@ -65,10 +67,15 @@ function Login() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
+              className="loginInput"
+              placeholder="Passowrd"
               required
             />
           </div>
-          <button type="submit">Login</button>
+          <div className="loginForgotPassword">
+            Forgot Password? <a href="/forgotPassword">Click here</a>
+          </div>
+          <button type="submit" className="loginButton">Login</button>
         </form>
       </div>
     </>
