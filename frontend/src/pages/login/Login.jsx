@@ -48,7 +48,6 @@ function Login() {
         <form onSubmit={handleSubmit} className="loginForm">
           <div>
             <input
-              type="text"
               id="username"
               value={username}
               onChange={(e) => {
@@ -73,7 +72,7 @@ function Login() {
             />
           </div>
           <div className="loginForgotPassword">
-            Forgot Password? <a href="/forgotPassword">Click here</a>
+            Forgot Password? <a href="/forgotPassword">Click Here</a>
           </div>
           <button type="submit" className="loginButton">Login</button>
         </form>

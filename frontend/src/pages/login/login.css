@@ -14,7 +14,7 @@
     color: #ffffff;
     font-family: 'Orbitron', sans-serif;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 80px;
     font-family: var(--font-zen);
     font-weight: 100;
 }
@@ -24,7 +24,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .loginInput {
@@ -37,10 +37,27 @@
     font-family: var(--font-zen);
     font-weight: 100;
     margin-top: 10px;
+    width: 336px;
+    height: 20px;
+    transition: 0.5s;
+}
+
+.loginInput:focus {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.loginInput::placeholder {
+    color: var(--lightBlue);
+    font-family: var(--font-zen);
+    font-weight: 100;
+}
+
+.loginInput:last-child {
+    margin-top: 20px;
 }
 
 .loginButton {
-    background-color: var(--darkBlue);
+    background-color: var(--btn-light);
     border: 1px solid var(--lightBlue);
     border-radius: 40px;
     padding: 15px 32px;
@@ -48,15 +65,28 @@
     color: var(--white);
     font-family: var(--font-zen);
     font-weight: 100;
-    margin-top: 10px;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+.loginButton:hover {
+    background-color: var(--lightBlue);
+    color: var(--darkBlue);
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 1);
 }
 
 .loginForgotPassword {
     font-size: 12px;
-    color: #ffffff;
+    color: var(--grey);
     font-family: 'Orbitron', sans-serif;
     text-align: center;
-    margin-top: 10px;
-    font-family: var(--font-zen);
+    margin-top: 20px;
+    font-family: var(--font-space);
     font-weight: 100;
+}
+
+.loginForgotPassword a {
+    text-decoration: none;
+    color: #ffffff;
 }
