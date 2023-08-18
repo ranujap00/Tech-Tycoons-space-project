@@ -5,7 +5,7 @@ import "./Buttons.css";
 function Payment() {
   return (
     <div>
-      {/* <div className="welcomeContainer"></div> */} 
+      {/* <div className="welcomeContainer"></div> */}
       {/* uncomment above if you need that welcome image earth */}
       <style>{"body { background-color: #00061D; }"}</style>
       <div class="login-box">
@@ -33,7 +33,6 @@ function Payment() {
               autocomplete="off"
               placeholder="U Network Number"
               class="input-field"
-              type="text"
             />
           </div>
           <br></br>
