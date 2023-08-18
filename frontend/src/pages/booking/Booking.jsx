@@ -1,33 +1,35 @@
+// Booking.jsx
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
+import "./Booking.css"; 
+import { useNavigate } from "react-router-dom";
 
 function Booking() {
+  const navigate = useNavigate();
   const initialValues = {
     userId: sessionStorage.getItem("userId") || 1212,
     fullName: "",
     email: "",
     country: "",
     DOB: "",
-    noOfSeats: 0,
+    noOfSeats: null,
   };
 
   const validationSchema = Yup.object().shape({
-    fullName: Yup.string().required("Required"),
-    email: Yup.string().email("Invalid email").required("Required"),
+    fullName: Yup.string().required("Full Name is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
     country: Yup.string(),
     DOB: Yup.string(),
     noOfSeats: Yup.number()
       .min(0, "Must be a positive number")
-      .required("Required"),
+      .required("Number of Seats is required"),
   });
 
-  const handleSubmit = async (values, { setSubmitting }) => {
+  const handleSubmit = (values, { setSubmitting }) => {
     try {
-      await axios.post("http://localhost:8070/booking/addBooking", values);
-      console.log("Booking added");
-      // You can redirect or show a success message here
+    sessionStorage.setItem("bookingValues", JSON.stringify(values));
+    navigate("/payment");
     } catch (error) {
       console.error("Error adding booking", error);
     }
@@ -35,38 +37,49 @@ function Booking() {
   };
 
   return (
-    <div>
-      <h2>Reserve your seat for an amazing ride</h2>
+    <div className="booking-container">
+      <h2 className="heading">Reserve Your Seat for an Amazing Ride</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
         {({ isSubmitting }) => (
-          <Form>
-            <div>
-              <Field type="text" name="fullName" placeholder="Full Name" />
-              <ErrorMessage name="fullName" component="div" />
+          <Form className="form">
+            <div className="form-group">
+              <label htmlFor="fullName">Full Name</label>
+              <Field type="text" placeholder="Full Name" name="fullName" className="form-field" />
+              <ErrorMessage name="fullName" component="div" className="error" />
             </div>
-            <div>
-              <Field type="email" name="email" placeholder="Email" />
-              <ErrorMessage name="email" component="div" />
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <Field type="email" placeholder="Email Address" name="email" className="form-field" />
+              <ErrorMessage name="email" component="div" className="error" />
             </div>
-            <div>
-              <Field type="text" name="country" placeholder="Country" />
+            <div className="form-group">
+              <label htmlFor="country">Country</label>
+              <Field type="text" placeholder="Country" name="country" className="form-field" />
             </div>
-            <div>
-              <Field type="date" name="DOB" placeholder="Date of Birth" />
+            <div className="form-group">
+              <label htmlFor="DOB">Date of Birth</label>
+              <Field
+                type="date"
+                name="DOB"
+                placeholder="Date of Birth"
+                className="form-field"
+              />
             </div>
-            <div>
+            <div className="form-group">
+              <label htmlFor="noOfSeats">Number of Seats</label>
               <Field
                 type="number"
                 name="noOfSeats"
                 placeholder="Number of Seats"
+                className="form-field"
               />
-              <ErrorMessage name="noOfSeats" component="div" />
+              <ErrorMessage name="noOfSeats" component="div" className="error" />
             </div>
-            <button type="submit" disabled={isSubmitting}>
+            <button type="submit" className="button" disabled={isSubmitting}>
               Continue
             </button>
           </Form>

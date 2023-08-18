@@ -10,10 +10,6 @@
   transition: 0.4s ease-in-out;
 }
 
-.form:hover {
-  transform: scale(1.05);
-  border: 50px solid black;
-}
 
 #heading {
   text-align: center;
