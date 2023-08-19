@@ -1,5 +1,9 @@
 module.exports = {
   root: true,
+  presets: ["@babel/preset-env"],
+  module.exports = {
+    preset: "vite-jest",
+  };
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',
