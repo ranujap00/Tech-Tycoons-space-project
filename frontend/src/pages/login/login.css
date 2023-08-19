@@ -11,7 +11,6 @@
 .loginTopic {
     font-size: 24px;
     color: #ffffff;
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     margin-top: 80px;
     font-family: var(--font-zen);
@@ -78,7 +77,6 @@
 .loginForgotPassword {
     font-size: 12px;
     color: var(--grey);
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     margin-top: 20px;
     font-family: var(--font-space);
