@@ -29,8 +29,6 @@ function Welcome() {
             </button>
           </a>
         </div>
-
-
       </div >
     </>
   )

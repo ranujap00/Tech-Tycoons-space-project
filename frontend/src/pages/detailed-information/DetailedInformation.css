@@ -1,0 +1,61 @@
+.inforContainer {
+    width: 350px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+.inforImage {
+    margin: 0 auto;
+    width: 250px;
+    margin-top: 50px;
+}
+
+.inforText {
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: azure;
+    text-align: center;
+    font-family: var(--font-zen);
+    font-weight: 100;
+}
+
+.inforText h1 {
+    margin-top: 20px;
+    color: var(--lightBlue);
+    font-size: 24px
+}
+
+.inforText p {
+    color: var(--grey);
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.inforBar {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.inforBarCart {
+    border: 1px solid black;
+    text-align: center;
+}
+
+img.inforImg {
+    max-width: 50px;
+    margin-left: 20px;
+}
+
+.inforBarText {
+    color: var(--grey);
+    font-size: 16px;
+    margin-left: 20px;
+    font-family: var(--font-zen);
+    font-weight: 100;
+}
+
+button.infor {
+    margin-left: 120px;
+}
