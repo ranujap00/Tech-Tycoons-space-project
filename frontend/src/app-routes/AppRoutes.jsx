@@ -19,7 +19,7 @@ function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/innerouter" element={<InnerOuter />} />
         <Route path="/solar-destination" element={<SolarDestination />} />
-        <Route path="/detailed-information" element={<DetailedInformation />} />
+        <Route path="/detailed-information/:destination" element={<DetailedInformation />} />
         <Route path="/travel-mode" element={<TravelMode />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/payment" element={<Payment />} />

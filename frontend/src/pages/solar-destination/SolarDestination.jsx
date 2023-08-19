@@ -51,7 +51,7 @@ function SolarDestination() {
           <ul className="dock-list">
             <li className="app" id="sun" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/sun');
               }}>
                 <img src={SunImage} />
                 <span className="tooltip">Sun</span>
@@ -59,7 +59,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="mercury" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/mercury');
               }}>
               <img src={Mercury} />
                 <span className="tooltip">Mercury</span>
@@ -67,7 +67,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="venus" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/venus');
               }}>
               <img src={Venus} />
                 <span className="tooltip">Venus</span>
@@ -75,7 +75,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="earth" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/earth');
               }}>
               <img src={Earth} />
                 <span className="tooltip">Earth</span>
@@ -83,7 +83,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="osh" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/orion space hotel');
               }}>
               <img src={OSH} />
                 <span className="tooltip">Orion Space Hotel</span>
@@ -91,7 +91,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="mars" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/mars');
               }}>
               <img src={Mars} />
                 <span className="tooltip">Mars</span>
@@ -99,7 +99,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="jupiter" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/jupiter');
               }}>
               <img src={Jupiter} />
                 <span className="tooltip">Jupiter</span>
@@ -107,7 +107,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="saturn" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/saturn');
               }}>
               <img src={Saturn} />
                 <span className="tooltip">Saturn</span>
@@ -115,7 +115,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="uranus" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/uranus');
               }}>
               <img src={Uranus} />
                 <span className="tooltip">Uranus</span>
@@ -123,7 +123,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="neptune" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/neptune');
               }}>
               <img src={Neptune} />
                 <span className="tooltip">Neptune</span>
@@ -131,7 +131,7 @@ function SolarDestination() {
             </li>
             <li className="app" id="pluto" onMouseMove={handleAppHover}>
               <a onClick={() =>{
-                navigate('/detailed-information');
+                navigate('/detailed-information/pluto');
               }}>
               <img src={Pluto} />
                 <span className="tooltip">Pluto</span>
