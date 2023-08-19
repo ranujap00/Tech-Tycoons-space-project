@@ -1,5 +1,5 @@
-.welcomeContainer {
-    background-image: url("https://firebasestorage.googleapis.com/v0/b/space-tycoon-a24a4.appspot.com/o/earth-at-night-180-2.png?alt=media&token=2b1a0f3c-29df-4dc7-ab8b-7a507d6b73a8");
+.innerOuterContainer {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/space-tycoon-a24a4.appspot.com/o/spacemoon.png?alt=media&token=6c7fa003-9518-479f-a114-baa7598f7428");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,48 +8,40 @@
     position: fixed;
 }
 
-.welcomeText {
+.innerOuterContent {
     font-size: 24px;
-    color: #ffffff;
-    text-align: center;
-    margin-top: 300px;
-    font-family: var(--font-zen);
-    font-weight: 100;
-}
-
-.gemenideText {
-    font-size: 48px;
-    color: #ffffff;
-    text-align: center;
-    font-family: var(--font-zen);
-    font-weight: 100;
-    color: var(--purple);
+    color: #000000;
     text-shadow: 0 0 15px rgba(255, 255, 255, 1);
-}
-
-.discoverText {
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-    margin-top: 50px;
     font-family: var(--font-zen);
     font-weight: 100;
-    color: var(--grey);
-}
-
-.welcomeButtonContainer {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-top: 150px;
+}
+
+.IObtnContainer {
+    display: flex;
+    margin-top: 50px;
+}
+
+.innerOuterText {
+    font-size: 24px;
+    color: #000000;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    font-family: var(--font-zen);
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 80px;
-    margin: 0auto;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.welcomeButtonContainer:last-child {
-    margin-top: 10px;
-}
-
-.welcomeButton {
-    background-color: var(--darkBlue);
+.IOButton {
+    background-color: var(--btn-light);
     border: 1px solid var(--lightBlue);
     border-radius: 40px;
     padding: 15px 32px;
@@ -61,20 +53,20 @@
     cursor: pointer;
     margin: 4px 2px;
     transition-duration: 0.4s;
-    width: 271px;
-    height: 44px;
+    width: 190px;
+    height: 60px;
     color: var(--lightBlue);
     text-decoration: none;
     font-family: var(--font-zen);
     font-weight: 100;
 }
 
-.welcomeButton:hover {
+.IOButton:hover {
     background-color: var(--lightBlue);
     color: var(--darkBlue);
     box-shadow: 0 0 5px var(--lightBlue), 0 0 25px var(--lightBlue);
 }
 
-.welcomeButton:hover a {
+.IOButton:hover a {
     color: var(--darkBlue);
 }
