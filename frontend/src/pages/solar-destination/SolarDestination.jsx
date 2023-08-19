@@ -1,8 +1,19 @@
 import "./solarDestination.css";
 import { useRef } from "react";
 import { scaleValue } from "./utils/scale";
-
-import './SolarDestination.css'
+import { useNavigate } from "react-router-dom";
+import SunImage from "../../assets/img/sun.png";
+import Mercury from "../../assets/img/mercury.png";
+import Venus from "../../assets/img/venus.png";
+import Earth from "../../assets/img/earth.png";
+import OSH from "../../assets/img/osh.png";
+import Mars from "../../assets/img/mars.png";
+import Jupiter from "../../assets/img/Jupiter.png";
+import Saturn from "../../assets/img/saturn.png";
+import Uranus from "../../assets/img/Uranus.png";
+import Neptune from "../../assets/img/neptune.png";
+import Pluto from "../../assets/img/pluto.png";
+import "./SolarDestination.css";
 
 function SolarDestination() {
   const dockRef = useRef(null);
@@ -31,81 +42,103 @@ function SolarDestination() {
       `${offsetPixels}px`
     );
   };
+  const navigate = useNavigate();
 
   return (
     <>
       <div className="page">
         <nav ref={dockRef} className="dock">
-          <ul>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/arc.png" />
-                <span className="tooltip">Arc Browser</span>
+          <ul className="dock-list">
+            <li className="app" id="sun" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+                <img src={SunImage} />
+                <span className="tooltip">Sun</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/1password.png" />
-                <span className="tooltip">1Password</span>
+            <li className="app" id="mercury" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Mercury} />
+                <span className="tooltip">Mercury</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/calendar.png" />
-                <span className="tooltip">Calendar</span>
+            <li className="app" id="venus" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Venus} />
+                <span className="tooltip">Venus</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/email.png" />
-                <span className="tooltip">Mail (who uses this app?!)</span>
+            <li className="app" id="earth" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Earth} />
+                <span className="tooltip">Earth</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/signal.png" />
-                <span className="tooltip">Signal</span>
+            <li className="app" id="osh" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={OSH} />
+                <span className="tooltip">Orion Space Hotel</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/slack.png" />
-                <span className="tooltip">Slack</span>
+            <li className="app" id="mars" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Mars} />
+                <span className="tooltip">Mars</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/spotify.png" />
-                <span className="tooltip">Spotify</span>
+            <li className="app" id="jupiter" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Jupiter} />
+                <span className="tooltip">Jupiter</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/vscode.png" />
-                <span className="tooltip">VsCode</span>
+            <li className="app" id="saturn" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Saturn} />
+                <span className="tooltip">Saturn</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/warp.png" />
-                <span className="tooltip">Warp</span>
+            <li className="app" id="uranus" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Uranus} />
+                <span className="tooltip">Uranus</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/frontendfyi.png" />
-                <span className="tooltip">Visit frontend.fyi</span>
+            <li className="app" id="neptune" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Neptune} />
+                <span className="tooltip">Neptune</span>
               </a>
             </li>
-            <li className="app" onMouseMove={handleAppHover}>
-              <a href="#" target="_blank">
-                <img src="https://www.frontend.fyi/playground-assets/macos-dock/icons/youtube.png" />
-                <span className="tooltip">Watch this tutorial on YouTube</span>
+            <li className="app" id="pluto" onMouseMove={handleAppHover}>
+              <a onClick={() =>{
+                navigate('/detailed-information');
+              }}>
+              <img src={Pluto} />
+                <span className="tooltip">Pluto</span>
               </a>
             </li>
           </ul>
         </nav>
-
       </div>
     </>
   );
