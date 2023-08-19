@@ -11,4 +11,6 @@
 
   --font-zen: 'Zen Dots', cursive;
   --font-space: 'Space Mono', monospace;
+
+  background-color: var(--darkBlue);
 }
