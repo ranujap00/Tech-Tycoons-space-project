@@ -6,32 +6,52 @@ import axios from "axios";
 
 function Payment() {
 
-  const [uNetworkNumber, setUNetworkNumber] = useState("");
-  const [securityCode, setSecurityCode] = useState("");
+  const [uNetNumber, setUNetNumber] = useState();
+  const [amount, setAmount] = useState(10000);
+  const [payMode, setPayMode] = useState("crypto");
+  const [securityCode, setSecurityCode] = useState();
   const bookingValues = JSON.parse(sessionStorage.getItem("bookingValues"));
 
-  const handlePay = async (e) => {
+  const userId = sessionStorage.getItem("userId");
+  const fullName = bookingValues.fullName
+  const email = bookingValues.email
+  const country = bookingValues.country
+  const DOB = bookingValues.DOB
+  const noOfSeats = bookingValues.noOfSeats
+
+  async function handlePay(){
     const paymentPayload = {
-      bookingValues,
-      uNetworkNumber,
-      securityCode,
+      userId,
+      fullName,
+      email,
+      country,
+      DOB,
+      noOfSeats,
+      payMode,
+      amount,
+      uNetNumber,
+      securityCode
     };
+
       // Make the POST API call to store booking data and payment details
-      await axios.post("http://localhost:8070/addBooking", paymentPayload)
+      await axios.post("http://localhost:8070/booking/addBooking", paymentPayload)
       .then(()=>{
         console.log("Booking data and payment details stored successfully.");
         alert('Booking data and payment details stored successfully.');
+
+        // TODO: navigate to receipt page
       }).catch((e)=>{
         console.error("Error storing booking data and payment details.");
         alert('Error storing booking data and payment details.');
       });
+      
   };
   return (
     <div>
       <style>{"body { background-color: #00061D; }"}</style>
       <div className="payment-box">
         <form onSubmit={handlePay}>
-          <p id="heading">Your Total Payment is 1000 UC </p>
+          <p id="heading">Your Total Payment is {amount} UC </p>
           <br></br>
           <center>
             <button className="ui-btn">
@@ -55,7 +75,7 @@ function Payment() {
               placeholder="U Network Number"
               className="input-field"
               name="U Network Number"
-              onChange={(e) => setUNetworkNumber(e.target.value)}
+              onChange={(e) => setUNetNumber(e.target.value)}
             />
           </div>
           <br></br>

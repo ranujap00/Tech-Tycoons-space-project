@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import "./Booking.css"; 
+import "./Booking.css";
 import { useNavigate } from "react-router-dom";
 
 function Booking() {
   const navigate = useNavigate();
+
   const initialValues = {
     userId: sessionStorage.getItem("userId") || 1212,
     fullName: "",
@@ -27,8 +28,8 @@ function Booking() {
 
   const handleSubmit = (values, { setSubmitting }) => {
     try {
-    sessionStorage.setItem("bookingValues", JSON.stringify(values));
-    navigate("/payment");
+      sessionStorage.setItem("bookingValues", JSON.stringify(values));
+      navigate("/payment");
     } catch (error) {
       console.error("Error adding booking", error);
     }
@@ -47,17 +48,32 @@ function Booking() {
           <Form className="form">
             <div className="form-group">
               <label htmlFor="fullName">Full Name</label>
-              <Field type="text" placeholder="Full Name" name="fullName" className="form-field" />
+              <Field
+                type="text"
+                placeholder="Full Name"
+                name="fullName"
+                className="form-field"
+              />
               <ErrorMessage name="fullName" component="div" className="error" />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <Field type="email" placeholder="Email Address" name="email" className="form-field" />
+              <Field
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                className="form-field"
+              />
               <ErrorMessage name="email" component="div" className="error" />
             </div>
             <div className="form-group">
               <label htmlFor="country">Country</label>
-              <Field type="text" placeholder="Country" name="country" className="form-field" />
+              <Field
+                type="text"
+                placeholder="Country"
+                name="country"
+                className="form-field"
+              />
             </div>
             <div className="form-group">
               <label htmlFor="DOB">Date of Birth</label>
@@ -76,7 +92,11 @@ function Booking() {
                 placeholder="Number of Seats"
                 className="form-field"
               />
-              <ErrorMessage name="noOfSeats" component="div" className="error" />
+              <ErrorMessage
+                name="noOfSeats"
+                component="div"
+                className="error"
+              />
             </div>
             <button type="submit" className="button" disabled={isSubmitting}>
               Continue
