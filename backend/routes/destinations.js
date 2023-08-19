@@ -40,6 +40,23 @@ router.route("/getDestination").get((req, res) => {
     })
 })
 
+//Get destination by name
+router.route("/getDestinationByName/:name").get((req, res) => {
+    const destinationName = req.params.name;
+
+    destination.findOne({ destinationName: destinationName }).then((destination) => {
+        if (destination) {
+            res.json(destination);
+        } else {
+            res.status(404).json({ message: "Destination not found" });
+        }
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json({ message: "An error occurred while retrieving the destination" });
+    });
+});
+
+
 
 //Get destination by objectId
 router.route("/getDestinationById/:id").get((req, res) => {
