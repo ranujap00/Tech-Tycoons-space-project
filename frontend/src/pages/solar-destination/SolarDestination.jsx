@@ -1,3 +1,5 @@
+import './solardestination.css'
+
 function SolarDestination() {
 
     return (

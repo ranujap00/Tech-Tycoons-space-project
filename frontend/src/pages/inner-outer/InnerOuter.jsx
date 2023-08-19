@@ -6,14 +6,14 @@ function InnerOuter() {
     <>
       <div className="innerOuterContainer">
         <div className="innerOuterContent">
-          <h2 className = "innerOuterText">Where are you <br />heading to?</h2>
+          <h2 className="innerOuterText">Where are you <br />heading to?</h2>
           <div className="IObtnContainer">
-            <a href="/innerouter">
+            <a href="/solar-destination">
               <button className="IOButton">
                 Inner Solar
               </button>
             </a>
-            <a href="/outersolar">
+            <a href="/solar-destination">
               <button className="IOButton">
                 Outer Solar
               </button>
