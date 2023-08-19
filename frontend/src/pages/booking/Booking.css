@@ -1,4 +1,4 @@
-/* Booking.css */
+
 .booking-container {
     padding: 20px;
     background-color: #06061a;
@@ -37,7 +37,6 @@
     color: #06061a;
     font-family: 'Space Mono', monospace;
     font-size: 16px;
-    background-color: #41DDFF;
   }
 
   
@@ -66,10 +65,7 @@
     font-size: 14px;
     margin-top: 5px;
   }
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
+
   label {
     display: block;
     margin-bottom: 5px;
