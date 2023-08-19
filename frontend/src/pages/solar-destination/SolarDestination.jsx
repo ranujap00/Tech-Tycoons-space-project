@@ -2,6 +2,7 @@ import "./solarDestination.css";
 import { useRef } from "react";
 import { scaleValue } from "./utils/scale";
 
+import './SolarDestination.css'
 
 function SolarDestination() {
   const dockRef = useRef(null);
@@ -104,7 +105,7 @@ function SolarDestination() {
             </li>
           </ul>
         </nav>
-        
+
       </div>
     </>
   );
