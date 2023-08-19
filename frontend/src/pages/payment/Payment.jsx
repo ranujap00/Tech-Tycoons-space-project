@@ -5,21 +5,20 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Payment() {
-
   const [uNetNumber, setUNetNumber] = useState();
-  const [amount, setAmount] = useState(10000);
+  const [amount, setAmount] = useState(10000); // amount calculation logic is not implemented
   const [payMode, setPayMode] = useState("crypto");
   const [securityCode, setSecurityCode] = useState();
   const bookingValues = JSON.parse(sessionStorage.getItem("bookingValues"));
 
   const userId = sessionStorage.getItem("userId");
-  const fullName = bookingValues.fullName
-  const email = bookingValues.email
-  const country = bookingValues.country
-  const DOB = bookingValues.DOB
-  const noOfSeats = bookingValues.noOfSeats
+  const fullName = bookingValues.fullName;
+  const email = bookingValues.email;
+  const country = bookingValues.country;
+  const DOB = bookingValues.DOB;
+  const noOfSeats = bookingValues.noOfSeats;
 
-  async function handlePay(){
+  async function handlePay() {
     const paymentPayload = {
       userId,
       fullName,
@@ -30,22 +29,22 @@ function Payment() {
       payMode,
       amount,
       uNetNumber,
-      securityCode
+      securityCode,
     };
 
-      // Make the POST API call to store booking data and payment details
-      await axios.post("http://localhost:8070/booking/addBooking", paymentPayload)
-      .then(()=>{
+    await axios
+      .post("http://localhost:8070/booking/addBooking", paymentPayload)
+      .then(() => {
         console.log("Booking data and payment details stored successfully.");
-        alert('Booking data and payment details stored successfully.');
+        alert("Booking data and payment details stored successfully.");
 
         // TODO: navigate to receipt page
-      }).catch((e)=>{
+      })
+      .catch((e) => {
         console.error("Error storing booking data and payment details.");
-        alert('Error storing booking data and payment details.');
+        alert("Error storing booking data and payment details.");
       });
-      
-  };
+  }
   return (
     <div>
       <style>{"body { background-color: #00061D; }"}</style>
@@ -101,7 +100,6 @@ function Payment() {
           <center>
             <button className="pay-button" type="submit">
               Pay Now
-              <span></span>
             </button>
           </center>
         </form>
