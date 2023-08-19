@@ -4,8 +4,6 @@ import axios from "axios";
 import "./Login.css";
 
 function Login() {
-  // const baseUrl = process.env.BACKEND_URL;
-  const id = "64de63473aaa6865292d227d"; //get from session
 
   // form input
   const [username, setUsername] = useState("");

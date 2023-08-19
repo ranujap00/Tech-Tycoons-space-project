@@ -6,15 +6,15 @@ const travelmodeSchema = new Schema({
 
     travelmodeId: {
         type: String,
-        required: true
+        required: false
     },
     travelmodeName: {
         type: String,
-        required: false
+        required: true
     },
     travelmodeDescription: {
         type: String,
-        required: false
+        required: true
     }
 });
 
