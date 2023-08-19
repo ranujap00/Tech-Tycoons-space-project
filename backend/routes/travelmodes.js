@@ -32,6 +32,21 @@ router.route("/getTravelmode").get((req, res) => {
     })
 })
 
+//Get travelmode by name
+router.route("/getTravelmodeByName/:name").get((req, res) => {
+    const travelModeName = req.params.name;
+
+    travelmode.findOne({ travelmodeName: travelModeName }).then((travelmode) => {
+        if (travelmode) {
+            res.json(travelmode);
+        } else {
+            res.status(404).json({ message: "Travel mode not found" });
+        }
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json({ message: "An error occurred while retrieving the travel mode" });
+    });
+});
 
 //Get travelmode by objectId
 router.route("/getTravelmodeById/:id").get((req, res) => {
