@@ -1,26 +1,28 @@
 .app {
-  transition: width, height, margin-top, cubic-bezier(0.25, 1, 0.5, 1) 100ms;
+  transition: width, height, margin-left, cubic-bezier(0.25, 1, 0.5, 1) 100ms;
+  width: 60px;
+  height: 60px;
+  position: relative;
+  margin-top: 10px;
 }
 
 .app:hover {
   width: 90px;
   height: 90px;
-  margin-top: -30px;
+  margin-left: -30px;
 }
 
-/* Right side */
-.app:hover+.app {
-  width: calc(80px + var(--dock-offset-right, 0px));
-  height: calc(80px + var(--dock-offset-right, 0px));
-  margin-top: calc(-20px + var(--dock-offset-right, 0px) * -1);
+.app:hover + .app {
+  width: calc(80px + var(--dock-offset-bottom, 0px));
+  height: calc(80px + var(--dock-offset-bottom, 0px));
+  margin-left: calc(-20px + var(--dock-offset-bottom, 0px) * -1);
 }
 
-.app:hover+.app+.app {
-  width: calc(70px + var(--dock-offset-right, 0px));
-  height: calc(70px + var(--dock-offset-right, 0px));
-  margin-top: calc(-10px + var(--dock-offset-right, 0px) * -1);
+.app:has(+ .app:hover) {
+  width: calc(80px + var(--dock-offset-top, 0px));
+  height: calc(80px + var(--dock-offset-top, 0px));
+  margin-left: calc(-20px + var(--dock-offset-top, 0px) * -1);
 }
-
 /* Left side */
 .app:has(+ .app:hover) {
   width: calc(80px + var(--dock-offset-left, 0px));
@@ -33,7 +35,9 @@
   height: calc(70px + var(--dock-offset-left, 0px));
   margin-top: calc(-10px + var(--dock-offset-left, 0px) * -1);
 }
-
+.dock-list{
+  list-style: none;
+}
 /**
    Styling that has nothing to do with the animation:
   */
@@ -43,39 +47,20 @@ body {
 }
 
 .page {
-  min-height: 100dvh;
+  min-height: 90dvh;
   display: flex;
 }
 
 .dock {
   margin: auto auto 12px auto;
-  border-radius: 24px;
   padding: 0 12px;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15));
-  box-shadow: rgba(255, 255, 255, 0.17) 0px 0px 0px 1px inset;
-}
-
-.dock ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-}
-
-.app {
-  width: 60px;
-  height: 60px;
-  position: relative;
-  /* The only reason this padding is disabled, is because the icons have
-    a padding in the image that would take too much effort to remove :)
-    In case you add custom icons or anything without the padding in the image, you need
-    to add this padding on each app element. If you'd add it as a margin between the elements,
-    you would lose the over state when moving between icons. */
-  /* padding: 0 6px; */
+  display: flex; /* Set to flex layout */
+  flex-direction: column; /* Display items in a column */
 }
 
 .app img {
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 120%;
 }
 
 .app a {
@@ -84,6 +69,7 @@ body {
   display: block;
   border-radius: 12px;
   color: #fff;
+  cursor: pointer;
 }
 
 .app:hover .tooltip,
@@ -93,11 +79,9 @@ body {
 
 .tooltip {
   position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: ease-in opacity 100ms;
+  top: 20%;
+  left: 120%;
+  transform: translateX(-10%);
   display: block;
   background: rgba(0, 0, 0, 0.58);
   padding: 8px;
@@ -106,6 +90,7 @@ body {
   width: auto;
   box-shadow: rgba(0, 0, 0, 0.17) 0px 12px 8px 1px;
   white-space: nowrap;
+  font-family: var(--font-space);
 }
 
 .source-links {
@@ -162,4 +147,38 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   filter: blur(80px);
   -webkit-filter: blur(80px);
+}
+/* li items */
+#sun {
+  transform: translateX(-256%) scale(1.8);
+}
+#mercury {
+  transform: translateX(-192%) scale(0.8);
+}
+#venus {
+  transform: translateX(-128%) scale(1.1);
+}
+#earth {
+  transform: translateX(-64%) scale(1.5);
+}
+#osh {
+  transform: translateX(-32%) scale(1.3);
+}
+#mars{
+
+}
+#jupiter {
+  transform: translateX(-32%) scale(1.9);
+}
+#saturn {
+  transform: translateX(-64%) scale(1.8);
+}
+#uranus {
+  transform: translateX(-128%) scale(1.4);
+}
+#neptune {
+  transform: translateX(-192%);
+}
+#pluto {
+  transform: translateX(-256%);
 }
