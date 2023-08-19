@@ -19,7 +19,6 @@
 
 .gemenideText {
     font-size: 48px;
-    color: #ffffff;
     text-align: center;
     font-family: var(--font-zen);
     font-weight: 100;
@@ -29,7 +28,6 @@
 
 .discoverText {
     font-size: 20px;
-    color: #ffffff;
     text-align: center;
     margin-top: 50px;
     font-family: var(--font-zen);
@@ -41,7 +39,6 @@
     display: flex;
     justify-content: center;
     margin-top: 80px;
-    margin: 0auto;
 }
 
 .welcomeButtonContainer:last-child {
@@ -64,9 +61,6 @@
     width: 271px;
     height: 44px;
     color: var(--lightBlue);
-    text-decoration: none;
-    font-family: var(--font-zen);
-    font-weight: 100;
 }
 
 .welcomeButton:hover {
