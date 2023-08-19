@@ -2,7 +2,7 @@ const router = require("express").Router();
 let travelmode = require("../models/Travelmode");
 
 // Add travelmode
-router.route("/addDestination").post((req, res) => {
+router.route("/addTravelmode").post((req, res) => {
     const travelmodeName = req.body.travelmodeName;
     const travelmodeDescription = req.body.travelmodeDescription;
     
