@@ -1,6 +1,6 @@
 
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
+import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
@@ -13,6 +13,11 @@ import './TravelMode.css'
 import data from '../../assets/data/travelModes.json'
 
 function TravelMode() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate("/booking");
+  };
 
   return (
     <>
@@ -40,7 +45,7 @@ function TravelMode() {
               )
             })}
           </Swiper>
-          <button className="travelButton">Select</button>
+          <button className="travelButton" onClick={handleButtonClick}>Select</button>
         </div>
       </div>
     </>

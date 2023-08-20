@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./DetailedInformation.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function DetailedInformation() {
+  const navigate = useNavigate();
   // const satern =
   //   "https://firebasestorage.googleapis.com/v0/b/space-tycoon-a24a4.appspot.com/o/satern-cropped.png?alt=media&token=39abb5b5-9de8-4e8c-a62c-06908974752a";
   const logo =
@@ -25,6 +26,10 @@ function DetailedInformation() {
     }
     getDestination();
   }, []);
+
+  const handleButtonClick = () => {
+    navigate("/travel-mode");
+  };
 
   return (
     <>
@@ -52,7 +57,7 @@ function DetailedInformation() {
             <h4 className="inforBarText">Attractions</h4>
           </div>
         </div>
-        <button className="travelButton infor">Continue</button>
+        <button className="travelButton infor" onClick={handleButtonClick}>Continue</button>
       </div>
     </>
   );
