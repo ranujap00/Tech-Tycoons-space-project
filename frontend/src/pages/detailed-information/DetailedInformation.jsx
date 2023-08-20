@@ -46,15 +46,15 @@ function DetailedInformation() {
         <div className="inforBar">
           <div className="inforBarCart">
             <img src={logo} className="inforImg" alt="" />
-            <h4 className="inforBarText">Climate</h4>
+            <h4 className="inforBarText">{destinationDetails.climate}</h4>
           </div>
           <div className="inforBarCart">
             <img src={logo} className="inforImg" alt="" />
-            <h4 className="inforBarText">Culture</h4>
+            <h4 className="inforBarText">{destinationDetails.culture}</h4>
           </div>
           <div className="inforBarCart">
             <img src={logo} className="inforImg" alt="" />
-            <h4 className="inforBarText">Attractions</h4>
+            <h4 className="inforBarText">{destinationDetails.attractions}</h4>
           </div>
         </div>
         <button className="travelButton infor" onClick={handleButtonClick}>Continue</button>
