@@ -1,9 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
+  const navigate = useNavigate();
   // form input
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,6 +25,7 @@ function Login() {
           sessionStorage.setItem("userId", res.data);
 
           // Move to next page
+          navigate("/innerouter");
         } else {
           alert("Username or password is incorrect");
         }
